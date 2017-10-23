@@ -1,0 +1,68 @@
+   1               		.file	"16bitpwm.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB7:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 A09A      		sbi 52-32,0
+  25               	.LM3:
+  26 0002 8FEF      		ldi r24,lo8(-1)
+  27 0004 81BB      		out 49-32,r24
+  28               	.LM4:
+  29 0006 929A      		sbi 50-32,2
+  30               	.LM5:
+  31 0008 9398      		cbi 50-32,3
+  32               	.LM6:
+  33 000a 8FB5      		in r24,79-32
+  34 000c 8369      		ori r24,lo8(-109)
+  35 000e 8FBD      		out 79-32,r24
+  36               	.LM7:
+  37 0010 85E0      		ldi r24,lo8(5)
+  38 0012 8EBD      		out 78-32,r24
+  39               	.LM8:
+  40 0014 80E2      		ldi r24,lo8(800)
+  41 0016 93E0      		ldi r25,hi8(800)
+  42 0018 9BBD      		out (74)+1-32,r25
+  43 001a 8ABD      		out 74-32,r24
+  44               	.LM9:
+  45 001c 8CEB      		ldi r24,lo8(700)
+  46 001e 92E0      		ldi r25,hi8(700)
+  47 0020 99BD      		out (72)+1-32,r25
+  48 0022 88BD      		out 72-32,r24
+  49               	.LM10:
+  50               	/* #APP */
+  51               	 ;  29 "16bitpwm.c" 1
+  52 0024 7894      		sei
+  53               	 ;  0 "" 2
+  54               	/* #NOAPP */
+  55               	.L2:
+  56 0026 00C0      		rjmp .L2
+  57               	.LFE7:
+  59               	.global	cnt
+  60               	.global	cnt
+  61               		.section .bss
+  64               	cnt:
+  65 0000 0000      		.skip 2,0
+  90               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 16bitpwm.c
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccNakyaL.s:2      *ABS*:0000003f __SREG__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccNakyaL.s:3      *ABS*:0000003e __SP_H__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccNakyaL.s:4      *ABS*:0000003d __SP_L__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccNakyaL.s:5      *ABS*:00000034 __CCP__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccNakyaL.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccNakyaL.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccNakyaL.s:18     .text:00000000 main
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccNakyaL.s:64     .bss:00000000 cnt
+
+UNDEFINED SYMBOLS
+__do_clear_bss

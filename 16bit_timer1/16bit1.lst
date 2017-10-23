@@ -1,0 +1,73 @@
+   1               		.file	"16bit1.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB3:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 A09A      		sbi 52-32,0
+  25               	.LM3:
+  26 0002 71E0      		ldi r23,lo8(1)
+  27               	.LM4:
+  28 0004 64E0      		ldi r22,lo8(4)
+  29               	.LM5:
+  30 0006 50E8      		ldi r21,lo8(-128)
+  31               	.LM6:
+  32 0008 49E0      		ldi r20,lo8(9)
+  33               	.LM7:
+  34 000a 2CE0      		ldi r18,lo8(12)
+  35 000c 30E0      		ldi r19,hi8(12)
+  36               	.LVL0:
+  37               	.L4:
+  38               	.LM8:
+  39 000e 85B3      		in r24,53-32
+  40               	.LVL1:
+  41 0010 8727      		eor r24,r23
+  42 0012 85BB      		out 53-32,r24
+  43 0014 80E0      		ldi r24,lo8(0)
+  44 0016 90E0      		ldi r25,hi8(0)
+  45               	.LVL2:
+  46               	.L3:
+  47               	.LM9:
+  48 0018 5FBD      		out 79-32,r21
+  49               	.LM10:
+  50 001a 4EBD      		out 78-32,r20
+  51               	.LM11:
+  52 001c 3DBD      		out (76)+1-32,r19
+  53 001e 2CBD      		out 76-32,r18
+  54               	.L2:
+  55               	.LM12:
+  56 0020 08B6      		in __tmp_reg__,88-32
+  57 0022 02FE      		sbrs __tmp_reg__,2
+  58 0024 00C0      		rjmp .L2
+  59               	.LM13:
+  60 0026 68BF      		out 88-32,r22
+  61               	.LM14:
+  62 0028 1EBC      		out 78-32,__zero_reg__
+  63               	.LM15:
+  64 002a 0196      		adiw r24,1
+  65 002c 833E      		cpi r24,227
+  66 002e 9105      		cpc r25,__zero_reg__
+  67 0030 01F4      		brne .L3
+  68 0032 00C0      		rjmp .L4
+  69               	.LFE3:
+  95               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 16bit1.c
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccO2WHeY.s:2      *ABS*:0000003f __SREG__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccO2WHeY.s:3      *ABS*:0000003e __SP_H__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccO2WHeY.s:4      *ABS*:0000003d __SP_L__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccO2WHeY.s:5      *ABS*:00000034 __CCP__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccO2WHeY.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccO2WHeY.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\KKP_JO~1\AppData\Local\Temp/ccO2WHeY.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS
